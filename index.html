@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>De donkere kamer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="glow" aria-hidden="true"></div>
+<div class="safelight" aria-hidden="true"></div>
+
+<header class="intro">
+  <div class="lamp" aria-hidden="true">
+    <span class="lamp-wire"></span>
+    <span class="lamp-socket"></span>
+    <span class="lamp-bulb"></span>
+  </div>
+
+  <button class="cord" id="cord" type="button" aria-pressed="false">
+    <span class="cord-string" aria-hidden="true"></span>
+    <span class="cord-knob" aria-hidden="true"></span>
+    <span class="visually-hidden">Doe het lampje aan</span>
+  </button>
+
+  <p class="hint" id="hint">Trek aan het touwtje</p>
+
+  <div class="intro-text">
+    <h1>Voor <span data-name>Elise</span></h1>
+    <p class="lede">Welkom in de donkere kamer. Onze foto's hangen hier al te drogen, alleen zijn ze nog niet ontwikkeld.</p>
+    <a class="down" href="#fotos">Naar de foto's</a>
+  </div>
+</header>
+
+<main id="room" inert>
+  <section class="section" id="fotos" aria-labelledby="fotos-title">
+    <div class="section-head">
+      <h2 id="fotos-title">Ontwikkel ze maar</h2>
+      <p>Tik op een foto en wacht even. Tik nog een keer om hem groot te bekijken.</p>
+      <p class="counter" id="counter" aria-live="polite"></p>
+    </div>
+    <div class="lines" id="lines"></div>
+  </section>
+
+  <section class="section timer-section" aria-labelledby="timer-title">
+    <div class="section-head">
+      <h2 id="timer-title">De timer loopt nog</h2>
+      <p>Aangezet op <span id="since"></span>. Hij hoeft nooit af te gaan.</p>
+    </div>
+    <div class="timer" aria-hidden="true">
+      <svg class="dial" id="dial" viewBox="0 0 200 200"></svg>
+    </div>
+    <p class="elapsed" id="elapsed"></p>
+  </section>
+
+  <section class="section" aria-labelledby="waarom-title">
+    <div class="section-head">
+      <h2 id="waarom-title">Waarom jij</h2>
+      <p>Tik op de stapel voor de volgende.</p>
+    </div>
+    <div class="deck" id="deck"></div>
+    <div class="deck-foot">
+      <p class="deck-count" id="deck-count" aria-live="polite"></p>
+      <button class="text-btn" id="deck-next" type="button">Volgende reden</button>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="negatieven-title">
+    <div class="section-head">
+      <h2 id="negatieven-title">De negatieven</h2>
+      <p>Houd een negatief tegen het licht om te zien wat erop staat.</p>
+    </div>
+    <div class="film">
+      <div class="film-track" id="film"></div>
+    </div>
+  </section>
+
+  <section class="section" id="bonnen" aria-labelledby="bonnen-title">
+    <div class="section-head">
+      <h2 id="bonnen-title">Bonnenboekje</h2>
+      <p>Allemaal voor jou, geen houdbaarheidsdatum. Scheur een bon af als je hem wilt gebruiken en laat het me weten.</p>
+    </div>
+    <ol class="tickets" id="tickets"></ol>
+  </section>
+
+  <section class="section finale" aria-label="Tot slot">
+    <button class="switch" id="lights" type="button" aria-pressed="false">
+      <span class="switch-plate" aria-hidden="true"><span class="switch-toggle"></span></span>
+      <span class="switch-label">Doe het grote licht aan</span>
+    </button>
+    <article class="note" id="note" hidden></article>
+  </section>
+</main>
+
+<dialog class="viewer" id="viewer" aria-label="Foto bekijken">
+  <figure>
+    <img id="viewer-img" alt="">
+  </figure>
+  <button class="v-btn v-prev" id="v-prev" type="button" aria-label="Vorige foto">‹</button>
+  <button class="v-btn v-next" id="v-next" type="button" aria-label="Volgende foto">›</button>
+  <button class="v-btn v-close" id="v-close" type="button" aria-label="Sluiten">×</button>
+</dialog>
+
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
